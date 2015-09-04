@@ -1,5 +1,5 @@
-
-import os.path#Checks if the file exists
+# this is on my branch
+import os.path #  Checks if the file exists
 #Version 0.5
 print("""**************************************MENU**************************************""")
 ############################################################
@@ -13,10 +13,10 @@ def Luggage():
         with open("luggage.txt") as file:
             for line in file:
                 luggageList.append (line.strip())
-        open ("luggage.txt","w").close() #erase text in file        
-        
+        open ("luggage.txt","w").close() #erase text in file
+
     elif fileExists == False: # File doesnt exist so create one called luggage.txt
-        open ("luggage.txt","w").close() #create empty file        
+        open ("luggage.txt","w").close() #create empty file
 
     ans = True
     while ans:
@@ -34,7 +34,7 @@ def Luggage():
             listLength = len(luggageList) #how many items in list
             for i in range (0 , listLength):
                 print (i+1, luggageList[i])
-        elif ans == "2": # add item to list    
+        elif ans == "2": # add item to list
             newItem = input ("Enter a new item") #get new item to add to list
             luggageList.append (newItem) # add new item to list
             listLength = len(luggageList) #how many items in list
@@ -45,7 +45,7 @@ def Luggage():
             file.close()
         elif ans == "3":
             deleteCheck = input ("Are you sure you want to delete last item added? Y/N ")
-            
+
             if deleteCheck == "Y" or deleteCheck == "y" and (listLength>0):
                 luggageList.pop() # deletes last item from list.....................
                 listLength = len(luggageList) #how many items in list
@@ -54,7 +54,7 @@ def Luggage():
                 for i in range (0, listLength):
                     file.write (luggageList[i]) #write each item in list to file
                     file.write ("\n") #add end of line seperator
-                file.close()                    
+                file.close()
             elif deleteCheck == "N" or deleteCheck == "n":
                 continue
         elif ans == "4":
@@ -68,7 +68,7 @@ def Luggage():
         elif ans!="":
             input ("Incorrect Option. Select Option or press ENTER to return to main menu")
             continue
-        #ans = False   
+        #ans = False
 ############################################################
 ##Function: Time Zone Change
 ##Description: The Time Zone Changer allows you to pick where
@@ -120,7 +120,7 @@ def TimeZone():
         if ans=="UK":target=UK #Destination UK
         elif ans=="Poland":target=Poland#Destination Poland
         elif ans=="France":target=France#Destination France
-        elif ans=="Germany":target=Germany#Destination Germany  
+        elif ans=="Germany":target=Germany#Destination Germany
         elif ans=="New York":target=New_York#Destination New York
         elif ans=="Japan":target=Japan#Destination Japan
         elif ans=="":print("Not valid")#Not valid message
@@ -128,7 +128,7 @@ def TimeZone():
         print("Reset your watch by %d hours." % (target-origion))#Telling user how much they need to change their clock by
 
         ans=False
-        
+
 ############################################################
 ## Function: Currency Exchange
 ## Description: Converts between two currencies
@@ -151,7 +151,7 @@ def CurrencyConverter():
     print("Please choose")
     if currencypick=="1":convertTo=GBP
         #print("You have picked GBP")
-    elif currencypick=="2":convertTo=US 
+    elif currencypick=="2":convertTo=US
 
 ############################################################
 ####Convert to
@@ -162,7 +162,7 @@ def CurrencyConverter():
     3.France
     4.Germany
     5.Japan
-    6.UK""")    
+    6.UK""")
     if currencyChange=="1":convertFrom=GBP
         #print("You have chosen GBP")
     elif currencyChange=="2":convertFrom=US
@@ -197,7 +197,7 @@ def CurrencyConverter():
 ############################################################
 
 def CricketMatch():
-    
+
     cricketList = [] # create an empty list
     fileExists = os.path.isfile("cricket.txt") # check if a file has already been created
 
@@ -205,10 +205,10 @@ def CricketMatch():
         with open("cricket.txt") as file:
             for line in file:
                 cricketList.append (line.strip())
-        open ("cricket.txt","w").close() #erase text in file        
-        
+        open ("cricket.txt","w").close() #erase text in file
+
     elif fileExists == False: # File doesnt exist so create one called luggage.txt
-        open ("cricket.txt","w").close() #create empty file       
+        open ("cricket.txt","w").close() #create empty file
     print("Here you can store your game while you play. And see who wins")
     ans = True
     while ans:
@@ -227,7 +227,7 @@ def CricketMatch():
             for i in range (0 , listLength):
                 print (i+1, cricketList[i])
 
-        elif ans == "2": # add item to list    
+        elif ans == "2": # add item to list
             newItem = input ("Enter a new item") #get new item to add to list
             cricketList.append (newItem) # add new item to list
             listLength = len(cricketList) #how many items in list
@@ -239,7 +239,7 @@ def CricketMatch():
 
         elif ans == "3":#
             deleteCheck = input ("Are you sure you want to delete last item added? Y/N ")
-            
+
             if deleteCheck == "Y" or "y" and listLength>0:
                 cricketList.pop() # deletes last score from list
                 listLength = len(cricketList) #how many items in list
@@ -248,7 +248,7 @@ def CricketMatch():
                 for i in range (0, listLength):
                     file.write (cricketList[i]) #write each point scored in list to file
                     file.write ("\n") #add end of line seperator
-                file.close()                    
+                file.close()
             elif deleteCheck == "N" or "n":
                 continue
         elif ans == "4":
@@ -262,16 +262,16 @@ def CricketMatch():
         elif ans!="":
             input ("Incorrect Option. Select Option or press ENTER to return to main menu")
             continue
-        #ans = False   
+        #ans = False
     #1st over=6 ballsserved to batter
-    
 
-    
+
+
     #Batting team 1st e.g. team A
     score=input("Amount scored on first hit")
-        
-    
-    
+
+
+
 
     #Fielding team 1st e.g. team B
 
@@ -290,27 +290,27 @@ def Golf():
     print("You can calculate your scratch score of golf")
 ############################################################
 ##Course (How many holes)
-   
+
 
 ############################################################
     #answer=True
     #while answer:
 ##  2 holes
-        
+
     shots=int(input("How many shots did it take to finish the 2 holes?"))
     ScratchScore=sum=int(input(2*shots))
-    
+
 ##  6 holes
-            
+
     shots=int(input("How many shots did it take to finish the 6 holes?"))
     ScratchScore=sum=int(input(6*shots))
-    
+
 ##  10 holes
-        
+
 
     shots=int(input("How many shots did it take to finish the 10 holes"))
     ScratchScore=sum=int(input(10*shots))
-    
+
 
         #elif ans!="":input("Sorry the infomation is not valid");continue
 
@@ -318,10 +318,10 @@ def Golf():
 
 
 
-            
+
 
 ##  Total
-    
+
 ############################################################
 ## Function: Main Menu
 ## Description: The main menu is to allow the user to select
@@ -342,4 +342,4 @@ while answer:
     elif answer=="4":CricketMatch()
     elif answer=="5":Golf()
     elif answer !="": continue
-    
+
