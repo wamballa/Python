@@ -10,18 +10,18 @@ def funcGolf():
 def funcInv():
 
     print ("\n=Manage My Inventory===============================================")
-    fileExists = os.path.isfile("luggage.txt") # check if a file has already been created
+    fileExists = os.path.isfile("myLuggage.txt") # check if a file has already been created
 
     if fileExists == True: #File exists so read contents into a list
         luggageList = []
-        with open("luggage.txt") as file:
+        with open("myLuggage.txt") as file:
             for line in file:
                 luggageList.append (line.strip())
-        #open ("luggage.txt","w").close() #erase text in file        
+        #open ("myLuggage.txt","w").close() #erase text in file        
         
-    elif fileExists == False: # File doesnt exist so create one called luggage.txt
+    elif fileExists == False: # File doesnt exist so create one called myLuggage.txt
         luggageList=[]
-        open ("luggage.txt","w").close() #create empty file        
+        open ("myLuggage.txt","w").close() #create empty file        
 
     ans = True
     while ans:
@@ -41,9 +41,9 @@ What do you want to do:
         elif answer == "2": # add item to list    
             newItem = input ("Enter a new item") #get new item to add to list
             luggageList.append (newItem) # add new item to list
-            open ("luggage.txt","w").close() #erase text in file
+            open ("myLuggage.txt","w").close() #erase text in file
             listLength = len(luggageList) #how many items in list
-            file = open ("luggage.txt","a") #open file to append to
+            file = open ("myLuggage.txt","a") #open file to append to
             for i in range (0 , listLength):
                 file.write (luggageList[i]) # write each item in list to file
                 file.write ("\n") #add end of line seperator
@@ -52,11 +52,10 @@ What do you want to do:
             deleteCheck = input ("Are you sure you want to delete last item added? Y/N ")
             listLength = len(luggageList) #how many items in list
             if (deleteCheck == "Y" or deleteCheck=="y") and ( listLength>0):
-                #print ("HHHHHHHHHHHHHHH")
                 luggageList.pop() # deletes last item from list
                 listLength = len(luggageList) #how many items in list
-                open ("luggage.txt","w").close() #erase text in file
-                file = open ("luggage.txt","a") # open file to append to
+                open ("myLuggage.txt","w").close() #erase text in file
+                file = open ("myLuggage.txt","a") # open file to append to
                 for i in range (0, listLength):
                     file.write (luggageList[i]) #write each item in list to file
                     file.write ("\n") #add end of line seperator
@@ -66,7 +65,7 @@ What do you want to do:
         elif answer == "4":
             deleteCheck = input ("Are you sure you want to delete whole inventory? Y/N ")
             if deleteCheck=="y" or deleteCheck=="Y":
-                open ("luggage.txt","w").close() #erase text in file
+                open ("myLuggage.txt","w").close() #erase text in file
                 luggageList = []
                 print ("\nInventory Cleared")
             else:
