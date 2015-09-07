@@ -5,9 +5,47 @@ import sys  # used to kill python script
 
 
 ######################################################
-def funcGolf():
-    print("This is the GOLF function")
+def function_Cricket_Scores():
 
+    print ("\n=Cricket Scores: keep track of the scores for a cricket game======================\n ")
+
+    overScore = 0 # score for each over, zero'd after each over
+    totalScoreA = 0 # running total score for teamA
+    totalScoreB = 0 # running total score for teamB
+
+    teamA = ( input ("Enter the name of the first cricket team: ")) #enter teamA name
+    teamB = ( input ("Enter the name of the second cricket team: ")) #enter teamB name
+
+    print ("\nTeam %s bats first.\n" % (teamA))
+
+    for over in range (1 , 21): # 20 overs per team
+        for bowls in range (1 , 7 ): # 6 bowls per over
+            overScore = overScore + int(input ("Enter runs for Over %s, Ball %s, for team %s: " % ( over , bowls, teamA )))
+        print ( "Score for over %s is %s " % (over,overScore))
+        totalScoreA = totalScoreA + overScore # add score from the over to total score
+        overScore = 0 # zero over score
+        print ("\nTeam %s total score for %s overs is %s \n" % (teamA ,over, totalScoreA))
+
+    print ("\nTeam %s bats next.\n" % (teamB))
+
+    for over in range (1 , 21): # 20 overs per team
+        for bowls in range ( 1 , 7 ): # 6 bowls per over
+            overScore = overScore + int(input ("Enter runs for Over %s, Ball %s, for team %s: " % ( over , bowls, teamB )))
+        print ( "Score for over %s is %s " % (over,overScore))
+        totalScoreB = totalScoreB + overScore # add score from the over to total score
+        overScore = 0 # zero over score
+        if totalScoreB > totalScoreA: # check after every over if teamB score beats teamA score
+            print ("\nCONGRATS team %s. You beat team %s by %s runs to %s" % (teamB, teamA , totalScoreB,totalScoreA))
+            break # break the for loop
+        else:
+            print ("\nTeam %s total score for %s overs is %s \n" % (teamA ,over, totalScoreA))
+
+    if totalScoreA > totalScoreB:
+        print ("\nCONGRATS team %s. You beat %s by %s runs to %s" % (teamA , teamB,totalScoreA,totalScoreB))
+    elif totalScoreA == totalScoreB:
+        print ("\nDRAW team %s and team %s both got %s runs.\n" % (teamA,teamB , totalScoreB ))
+
+    input ("\nPress enter to return to main menu.")
 
 ######################################################
 def funcInv():
@@ -198,7 +236,7 @@ while loop:
 =MAIN MENU======================================================
 1. Inventory
 2. Time change
-3. Golf
+3. Cricket
 4. Currency Converter
 5. Exit application""")
     answer = input("Choose option 1..4  ")
@@ -207,7 +245,7 @@ while loop:
     elif answer == "2":
         funcTZ()
     elif answer == "3":
-        funcGolf()
+        function_Cricket_Scores()
     elif answer == "4":
         funcCurrencyConverter()
     elif answer == "5":
