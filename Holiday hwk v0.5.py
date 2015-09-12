@@ -1,5 +1,14 @@
 # this is on my branch
-import os.path #  Checks if the file exists
+#import os.path #  Checks if the file exists
+import os.path  # used to see if a local file exists or not
+
+import importlib
+moduleLoader = importlib.find_loader('os.path')
+found = moduleLoader is not None
+if not found:
+    print ("ERROR: cannot find module OS.PATH. Please install to continue...")
+
+
 #Version 0.5
 print("""**************************************MENU**************************************""")
 ############################################################
