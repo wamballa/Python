@@ -1,10 +1,8 @@
-__author__ = 'wamballa'
-
 """
-Challenge 28
+Challenge 29
 
 Write a program that allows the user to create and store a checklist for a holiday.
-It should start by asking them the destination of the holiday, how many things they
+It should start by asking them the destination of the holiday, how many things they
 need to pack and how many tasks they need to complete to prepare.
 
 The user should then be able to enter each item they need to pack and each task they need to complete.
@@ -33,5 +31,7 @@ file.write ("\nHere are the %s tasks to do:\n" % (numberOfTasks))
 for i in range (0,numberOfTasks):
     taskList.append (input("Tell me task %s you will take: " % (i+1)))
     file.write ("%s. %s\n" % (i,taskList[i]))
+
+file.close() # close the opened file
 
 print ("\nYour holiday items and tasks have been saved to file %s.txt.\n" % (holidayDestination))
