@@ -24,7 +24,7 @@ score = 0 # play score
 def writeResultToFile ():
     #open a file to write results
     file = open("%sMathsQuiz.txt" % name, "a")  # open file to append to
-    file.write ("\n%s you scored %d percent in the Maths Quiz." % (name, score/3*100,))
+    file.write ("\n%s you scored %d percent in the Maths Quiz." % (name, score/3*100))
     file.close()
 
 print ("Maths Quiz. Answer the following three questions.\n")
