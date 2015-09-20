@@ -7,7 +7,7 @@ At the end it should display a message informing of their score.
 Write a function that saves the users name and result in a file,
 """
 
-import random  # import random module to use random function
+    import random  # import random module to use random function
 
 #define variables
 operation = ["+", "-", "*"]
