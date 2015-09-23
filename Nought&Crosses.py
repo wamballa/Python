@@ -93,7 +93,7 @@ while True:
                 drawBoard()
             break
         else:
-            print ("space taken")
+            print ("Slot taken!! Try again...")
 
     while True and not gameOver:
         playerMove = int ( input ("Player O: Enter slot number: "))
@@ -104,7 +104,7 @@ while True:
                 drawBoard()
             break
         else:
-            print ("space taken")
+            print ("Slot taken!! Try again...")
     if gameOver == True:
         gameOver = False
         print ("\nStart Another Game...clear the board!!")
