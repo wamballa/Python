@@ -43,6 +43,33 @@ def checkWin():
             resetBoard()
             return
 
+    # check if any diagonal \ are matching
+    if slot[0] != "-":
+        if slot[0] == slot[4] and slot[4] == slot[8]:
+            gameOver = True
+            if slot[0] == "X":
+                print ("\n Congrats. Player X has won the game by capturing a diagonal.")
+                drawBoard()
+            else:
+                print ("\n Congrats. Player O has won the game by capturing a diagonal.")
+                drawBoard()
+            resetBoard()
+            return
+
+    # check if any diagonal / are matching
+    if slot[2] != "-":
+        if slot[2] == slot[4] and slot[4] == slot[6]:
+            gameOver = True
+            if slot[2] == "X":
+                print ("\n Congrats. Player X has won the game by capturing a diagonal.")
+                drawBoard()
+            else:
+                print ("\n Congrats. Player O has won the game by capturing a diagonal.")
+                drawBoard()
+            resetBoard()
+            return
+
+
 ######################################################################################
 # Main loop - start game
 ######################################################################################
