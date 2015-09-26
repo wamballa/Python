@@ -1,6 +1,6 @@
 """
 Challenge 8
-
+edited by jack
 Write a program that:
 converts and outputs marks into grades, using the following data:
 
