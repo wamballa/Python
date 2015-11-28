@@ -12,11 +12,25 @@ slot = [ "P" , "-" , "-" , "-" , "-" , "-" , "-" , "-"     # 0 1 2
          ,"-" , "-" , "-" , "-" , "-" , "-" , "-" , "-"
          ,"-" , "-" , "-" , "-" , "-" , "-" , "-" , "-"
          ,"-" , "-" , "-" , "-" , "-" , "-" , "-" , "-"]   # 6 7 8
+#Player setup
 playerPos = 0
-banditPos = 9
-
-slot [banditPos] = "B"
 score = 0
+
+# Setup Bandit Position
+banditPos = [0,0,0,0,0]
+temp = random.randint (0,63)
+for i in range (5):
+    while temp in banditPos or playerPos == temp:
+        temp = random.randint (0,63)
+    banditPos[i] = temp
+    slot[banditPos[i]] = "B"
+# Setup Chest Position
+chestPos = [0,0,0,0,0,0,0,0,0,0] #5 # 10 chests
+for i in range (10):
+    while temp in chestPos or playerPos == temp:
+        temp = random.randint (0,63)
+    chestPos[i] = temp
+    slot[chestPos[i]] = "C"
 
 counter = 0
 
@@ -34,15 +48,15 @@ def checkforBandit():
     global banditPos
     global playerPos
     global score
-    print ("PP = %s  BP = %s" % (playerPos, banditPos))
-    if playerPos == banditPos:
+    print ("PP = %s  BP = %s" % (playerPos, banditPos[1]))
+    if playerPos == banditPos[1]:
         print ("HIT BANDIT")
         score = 0
         newPos = random.randint (0,64)
         while newPos == playerPos:
             newPos = random.randint (0,64)
-        banditPos = newPos
-        slot [banditPos] = "B"
+        banditPos[1] = newPos
+        slot [banditPos[1]] = "B"
         #printMaze()
 
     print ("Score = %s" % score)
