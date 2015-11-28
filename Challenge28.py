@@ -10,8 +10,10 @@ Variables, Repetition, Arrays
 import random  # import random module to use random function
 
 name = []  # create name array
-
+name[0] = "hello"
 for i in range(0, 5):
     name.append(input("Enter name %s of 5: " % (i + 1)))  # apend names to array name[]
 
 print("\nYour random name is %s" % name[random.randint(0, 4)])  # print name from random position 0 to 4
+
+
